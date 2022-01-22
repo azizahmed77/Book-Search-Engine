@@ -1,9 +1,12 @@
+const { Book } = require('../models')
+
 const resolvers = {
     Query: {
-      helloWorld: () => {
-        return 'Hello world!';
-      }
+        books: () => {
+            return Book.find().sort({ bookId: -1 });
+        }
     }
-  };
-  
-  module.exports = resolvers;
+}
+
+
+module.exports = resolvers;
