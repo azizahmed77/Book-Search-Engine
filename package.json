@@ -13,6 +13,14 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "concurrently": "^5.1.0"
-  }
+    "concurrently": "^5.3.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/azizahmed77/Book-Search-Engine.git"
+  },
+  "bugs": {
+    "url": "https://github.com/azizahmed77/Book-Search-Engine/issues"
+  },
+  "homepage": "https://github.com/azizahmed77/Book-Search-Engine#readme"
 }
