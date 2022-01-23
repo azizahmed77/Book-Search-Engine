@@ -43,21 +43,21 @@ const resolvers = {
             return { token, user };
         },
         saveBook: async (parent, { newEntry }, context) => {
-            console.log(context.user, context, "Saved Book")
-            if (context.user) {
+            console.log(context,context.user, context.data, "Saved Book")
+            if (context) {
                 const updatedUser = await User.findByIdAndUpdate(
-                    { _id: context.user._id },
+                    { _id: context.data.user._id },
                     { $addToSet: { savedBooks: newEntry } },
                     { new: true }
-                );
-                return updatedUser;
-            }
+                    );
+                    return updatedUser;
+                }
             throw new AuthenticationError(`You're not logged in!`);
         },
         removeBook: async (parent, { bookId }, context) => {
-            if (context.user) {
+            if (context) {
                 const updatedUser = await User.findByIdAndUpdate(
-                    { _id: context.user._id },
+                    { _id: context.data.user._id },
                     { $pull: { savedBooks: { bookId } } },
                     { new: true }
                 );

@@ -7,12 +7,15 @@ import { removeBookId } from '../utils/localStorage';
 import { useQuery, useMutation } from '@apollo/client';
 import { REMOVE_BOOK } from "../utils/mutations";
 import { GET_ME } from '../utils/queries'
+import {useParams } from 'react-router-dom';
 
 
 const SavedBooks = () => {
-  const { loading, data } = useQuery(GET_ME);
-  const [deleteBook, { error }] = useMutation(REMOVE_BOOK);
+  const { loading, data } = useQuery(GET_ME)
+  const [deleteBook] = useMutation(REMOVE_BOOK);
   const userData = data?.me || {};
+  
+  
 
 
 

@@ -15,7 +15,7 @@ const startServer = async () => {
     typeDefs,
     resolvers,
     context: ({ req }) => ({
-      data: authMiddleware
+      data: authMiddleware(req)
     })
   })
   await server.start();
